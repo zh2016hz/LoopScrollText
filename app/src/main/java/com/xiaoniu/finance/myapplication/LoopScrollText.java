@@ -1,6 +1,7 @@
 package com.xiaoniu.finance.myapplication;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -13,7 +14,7 @@ import android.util.AttributeSet;
 
 public class LoopScrollText extends android.support.v7.widget.AppCompatTextView {
     public LoopScrollText(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public LoopScrollText(Context context, @Nullable AttributeSet attrs) {
@@ -27,5 +28,22 @@ public class LoopScrollText extends android.support.v7.widget.AppCompatTextView 
         setEllipsize(TextUtils.TruncateAt.MARQUEE);
         setFocusable(true);
         setFocusableInTouchMode(true);
+    }
+
+    @Override
+    public boolean isFocused() {
+        return true;
+    }
+
+    @Override
+    protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
+        if (focused)
+            super.onFocusChanged(focused, direction, previouslyFocusedRect);
+    }
+
+    @Override
+    public void g(boolean hasWindowFocus) {
+        if (hasWindowFocus)
+            super.onWindowFocusChanged(hasWindowFocus);
     }
 }

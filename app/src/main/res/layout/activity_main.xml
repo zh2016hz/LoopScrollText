@@ -9,6 +9,8 @@
     tools:context="com.xiaoniu.finance.myapplication.MainActivity">
 
     <TextView
+        android:id="@+id/show"
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -18,4 +20,8 @@
         android:layout_height="wrap_content"
         android:text="我是跑马灯，什么时候我都在一直循环，来啊 互相伤害啊，尼玛的，凄凄切切群群群群群群群群群群群群群群群群群群群群群群群群群群群群群！！！"
         />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="哈哈哈"/>
 </LinearLayout>
